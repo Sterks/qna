@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :questions
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'questions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
