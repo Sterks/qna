@@ -8,9 +8,8 @@ set :repo_url, 'git@github.com:Sterks/qna.git'
 set :git
 set :deploy_to, '/home/deployer/qna'
 set :deploy_user, 'deployer'
-set :default_shell, '/bin/bash -l'
-set :user, "deploy"
-set :use_sudo, false
+set :rvm_type, :auto
+
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
