@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:Sterks/qna.git'
 set :git
 set :deploy_to, '/home/deployer/qna'
 set :deploy_user, 'deployer'
-set :bundle_path, '/home/deployer/qna/shared/bundle'
+#set :bundle_path, '/home/deployer/qna/shared/bundle'
 set :rvm_type, :auto
 
 # You can configure the Airbrussh format using :format_options.
