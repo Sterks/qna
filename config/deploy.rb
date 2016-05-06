@@ -7,8 +7,8 @@ set :repo_url, 'git@github.com:Sterks/qna.git'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deployer/qna'
 set :deploy_user, 'deployer'
-set :rvm_ruby_version, '2.2'
-
+set :rvm_ruby_version, '2.1.2'
+set :rvm_type, :user
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
