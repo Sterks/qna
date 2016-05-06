@@ -5,9 +5,12 @@ set :application, 'qna'
 set :repo_url, 'git@github.com:Sterks/qna.git'
 
 # Default deploy_to directory is /var/www/my_app_name
+set :git
 set :deploy_to, '/home/deployer/qna'
 set :deploy_user, 'deployer'
 set :default_shell, '/bin/bash -l'
+set :user, "deploy"
+set :use_sudo, false
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
@@ -16,7 +19,7 @@ set :format_options, command_output: true, log_file: 'log/capistrano.log', color
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/private_pub.yml', '.env')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'vendor/bundle')
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
