@@ -5,9 +5,7 @@ RSpec.describe QuestionsController, type: :controller do
 
     let(:questions) { create_list(:question, 2) }
 
-    before do
-      get :index
-    end
+    before { get :index }
 
     it 'populates an array of all questions' do
       expect(assigns(:questions)).to match_array(questions)
@@ -76,21 +74,25 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe 'PATCH #update' do
-    context do
-      it 'assigns the required question to @question' do
+    let (:question) { create(:question) }
+    context 'valid attributes' do
+      it 'assings the required question to @question' do
         patch :update, id: question, question: attributes_for(:question)
         expect(assigns(:question)).to eq question
       end
-      it 'change question attributes' do
-        patch :update, id: question, question: { title: 'new title', body: 'new body'}
+
+      it 'change attributes' do
+        patch :update, id: question, question: { title: 'new title', body: 'new body' }
         question.reload
         expect(question.title).to eq 'new title'
         expect(question.body).to eq 'new body'
       end
+
       it 'redirects to the updated question' do
         patch :update, id: question, question: attributes_for(:question)
         expect(response).to redirect_to question
       end
     end
   end
+
 end
